@@ -1,0 +1,184 @@
+/* --- GLOBAL STYLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #0f172a; /* Deep Cyber Dark */
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: radial-gradient(circle at 10% 20%, rgba(0, 238, 255, 0.1) 0%, transparent 20%);
+}
+
+/* --- PRO NAVBAR (Glassmorphism) --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    /* Glass Effect */
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+}
+
+.logo span {
+    color: #0ef;
+}
+
+/* Navbar Links */
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Active Page & Hover Styling */
+.navbar a:hover, 
+.navbar a.active {
+    color: #0ef;
+    text-shadow: 0 0 10px rgba(0, 238, 255, 0.6);
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #0ef;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #0ef;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+/* Login Button */
+.btn-login {
+    margin-left: 35px;
+    padding: 8px 24px;
+    background: linear-gradient(45deg, #0ef, #00b3ff);
+    color: #0f172a;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.3);
+}
+
+.btn-login:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 238, 255, 0.6);
+}
+
+/* --- PAGE CONTENT LAYOUT --- */
+.container {
+    padding: 150px 8% 50px; /* Space for fixed navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #0ef;
+    -webkit-text-stroke: 1px #0ef;
+    text-shadow: 0 0 20px rgba(0, 238, 255, 0.3);
+}
+
+p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 600px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- MOBILE RESPONSIVE --- */
+#menu-icon {
+    font-size: 30px;
+    color: #fff;
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    header { padding: 15px 4%; }
+    .logo { font-size: 24px; }
+    
+    #menu-icon { display: block; }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        display: none; /* JS will toggle this */
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    
+    .navbar.open { display: flex; }
+
+    .navbar a {
+        display: block;
+        margin: 1.5rem;
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .btn-login { margin: 1.5rem auto; display: block; width: fit-content; }
+}

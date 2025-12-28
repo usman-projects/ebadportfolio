@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Ebad Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Ebad<span>Web</span>.</a>
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html" class="active">Contact</a> <!-- Active class here -->
+            <a href="#" class="btn-login">Login</a>
+        </nav>
+    </header>
+
+    <section class="container fade-in">
+        <h1>Contact <span>Us</span></h1>
+        <p>Ready to start a project? Let's talk.</p>
+
+        <form style="display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 400px;">
+            <input type="text" placeholder="Your Name" style="padding: 15px; background: rgba(255,255,255,0.1); border: 1px solid #333; color: white; border-radius: 5px; outline: none;">
+            <input type="email" placeholder="Your Email" style="padding: 15px; background: rgba(255,255,255,0.1); border: 1px solid #333; color: white; border-radius: 5px; outline: none;">
+            <button class="btn-login" style="margin: 0; width: 100%; cursor: pointer;">Send Message</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
